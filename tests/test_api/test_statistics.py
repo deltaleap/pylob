@@ -1,5 +1,3 @@
-import pytest
-
 from pylob import Level2
 
 """ require pytest-cases
@@ -34,8 +32,8 @@ def tick_wide_level2():
 @pytest.fixture
 def thick_level2():
     # Very thick level 2 limit order book.
-    # Very thick book definition: book with absolute bid ask spread greater than
-    # 2x the thick size
+    # Very thick book definition: book with absolute bid ask spread greater
+    # than 2x the thick size
     lob = Level2("thick")
     lob.set_tick_size(.1)
     lob.set_snapshot(
@@ -58,6 +56,7 @@ def test_abs_spread(lob, expected_spread):
     print(dir(lob))
     assert lob.abs_spread == expected_spread
 """
+
 
 def test_thin_level2():
     """Thin level 2 limit order book.

@@ -10,7 +10,8 @@ def test_init():
 
 
 def test_init_with_snapshot():
-    lob = Level2("list_of_tuples",
+    lob = Level2(
+        "list_of_tuples",
         bids=[(10, 20), (8, 50), (7, 1)],
         asks=[(11, 5), (15, 9)]
     )

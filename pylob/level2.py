@@ -7,16 +7,14 @@ class Level2(Statistics, L2Output):
         self.name = name
         self._bids = {}
         self._asks = {}
-        self.best_bid = ()        
+        self.best_bid = ()
         self.best_ask = ()
         self.tick_size = 1
 
         self.set_snapshot(bids, asks)
 
-
     def set_tick_size(self, tick_size) -> None:
         self.tick_size = tick_size
-
 
     def set_snapshot(self, bids, asks) -> None:
         for b in bids:
