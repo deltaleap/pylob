@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: [ubuntu-20.04, windows-2019, macOS-10.15]
 
     steps:
     - uses: actions/checkout@v2
@@ -21,7 +21,9 @@ jobs:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_PYLOB_TOKEN }}
       run: |
-        python -m cibuildwheel --output-dir wheelhouse
         #python setup.py sdist bdist_wheel
-        twine check dist/*
-        twine upload dist/*
+        #twine check dist/*
+        #twine upload dist/*
+        python -m cibuildwheel --output-dir wheelhouse
+        twine check ./wheelhouse/*
+        twine upload ./wheelhouse/*
