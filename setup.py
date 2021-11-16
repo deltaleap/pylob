@@ -49,7 +49,6 @@ setup(
     include_package_data=True,
     install_requires=[
         "sortedcontainers==2.4.0",
-        "pybind11==2.8.0"
     ],
     cmd_class={"build_ext": build_ext},
     ext_modules=ext_modules,
