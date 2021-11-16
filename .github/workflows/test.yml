@@ -5,7 +5,8 @@ on: [push, pull_request]
 jobs:
   build:
 
-    runs-on: [ubuntu-latest, windows-latest, macos-11]
+    #runs-on: [ubuntu-latest, windows-latest, macos-11]
+    runs-on: [ubuntu-latest, windows-latest]
     strategy:
       matrix:
         python-version: [3.6, 3.7, 3.8]
