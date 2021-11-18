@@ -29,3 +29,6 @@ class Level2(Statistics, L2Output):
         for a in asks:
             self._asks[a[0]] = a[1]
         self.timestamp = timestamp
+
+    def __repr__(self) -> str:
+        return f"L2[{self.name}]"
