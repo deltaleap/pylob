@@ -8,5 +8,5 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [tool.cibuildwheel]
-test-command = "python pylob/tests/test.py"
+test-command = "python -m pytest ."
 test-skip = "*universal2:arm64"
