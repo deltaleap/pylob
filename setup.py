@@ -6,7 +6,7 @@ from pybind11.setup_helpers import Pybind11Extension
 from pybind11.setup_helpers import build_ext
 
 
-__version__ = "0.2"
+__version__ = "0.2.1"
 
 # The directory containing this file
 HERE = pathlib.Path(__file__).parent
@@ -52,4 +52,5 @@ setup(
     ],
     cmd_class={"build_ext": build_ext},
     ext_modules=ext_modules,
+    zip_safe=False,
 )
