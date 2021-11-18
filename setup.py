@@ -6,7 +6,7 @@ from pybind11.setup_helpers import Pybind11Extension
 from pybind11.setup_helpers import build_ext
 
 
-__version__ = "0.2.1"
+__version__ = "0.2.7"
 
 # The directory containing this file
 HERE = pathlib.Path(__file__).parent
@@ -14,11 +14,13 @@ HERE = pathlib.Path(__file__).parent
 # The text of the README file
 README = (HERE / "README.md").read_text()
 
+
 ext_modules = [
     Pybind11Extension(
         "trades",
         sources=sorted(glob("pylob/trades/*.cpp")),
         language="c++",
+        cxx_std=11,
         include_dir=[
             "pybind11/include"
         ]
