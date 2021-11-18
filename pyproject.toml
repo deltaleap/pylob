@@ -9,5 +9,5 @@ build-backend = "setuptools.build_meta"
 
 [tool.cibuildwheel]
 test-requires = "pytest"
-test-command = "python -m pytest {package}/test"
+test-command = "python -m pytest {package}/tests"
 test-skip = "*universal2:arm64"
