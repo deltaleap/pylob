@@ -30,5 +30,43 @@ class Level2(Statistics, L2Output):
             self._asks[a[0]] = a[1]
         self.timestamp = timestamp
 
+    def delete_level(self, side, price_level, timestamp=0):
+        if timestamp != 0:
+            self.timestamp = timestamp
+
+        if side == "bid":
+            try:
+                del self._bids[price_level]
+            except KeyError:
+                # log
+                print(f"price level {price_level} not existing")
+        elif side == "ask":
+            try:
+                del self._asks[price_level]
+            except KeyError:
+                # log
+                print(f"price level {price_level} not existing")
+
+    def update(self, side, price_level, size, timestamp=0):
+        if timestamp != 0:
+            self.timestamp = timestamp
+
+        if size == 0:
+            self.delete_level(side, price_level, timestamp)
+            return
+
+        if side == "bid":
+            try:
+                self._bids[price_level] = size
+            except KeyError:
+                # log
+                print(f"price level {price_level} not existing")
+        elif side == "ask":
+            try:
+                self._asks[price_level] = size
+            except KeyError:
+                # log
+                print(f"price level {price_level} not existing")
+
     def __repr__(self) -> str:
         return f"L2[{self.name}]"
