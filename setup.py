@@ -6,7 +6,7 @@ from pybind11.setup_helpers import Pybind11Extension
 from pybind11.setup_helpers import build_ext
 
 
-__version__ = "0.2.7"
+__version__ = "0.2.8"
 
 # The directory containing this file
 HERE = pathlib.Path(__file__).parent
